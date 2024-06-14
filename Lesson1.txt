@@ -1,0 +1,152 @@
+##############################################################################################################################################
+Data Types:
+    -> Data types are an important part of any high level programming language. In some languages datatypes will need to be specified. Python will try it's best to guess at a given data type. 
+
+    -> In your first cell type in the following line and hit play:
+        
+type(7)
+
+    -> These are intigers. they are specified by int
+    -> Copy that cell into a seperate cell and see what happens if you add some decimals to the seven and hit play.
+    -> You should see the output "float" this stands for floating point numbers. The complexities of what makes an intiger and a 
+       floating point number different in memory is not something we will go in to for now, but it is important that you note that they are different. 
+       We will talk about why in a little bit.
+    -> For now copy the cell you've just made and try putting quotation marks around the floating point number and hitting play.
+    -> Output is "str". This stands for string. A string is a list of characters. You can specify a string using double or single quotes and 
+       there are nuances to what make them different, but for now we will not care.
+    -> In a new cell type the following line and hit play:
+        
+type(True)
+
+    -> The output is "bool". This stands for boolean. There are only two possible boolean values True or False.
+    -> There are other datatypes, but for now this is what you will need. We will introduce the others as we need them.
+    -> If you ever have something as one datatype and you would like to convert it to another you can put the value in one of the following functions:
+
+str()
+int()
+float()
+bool()
+
+    -> There are more, but these are the ones you you will use the most and we can learn the others as we need them.
+
+############################################################################################################################################
+
+Variables and Simple operations:
+    -> Variables are best conceptualized as containers to hold values. You can store values in them and then call those variables later. This can save you a lot of typing in the future if you are using the same value. They also make your code more readable. 
+    ->Assign the value of a varible using an assignment opperator: = . This is commonly referred to as an equal sign, but to say if something equals something else in python you would use == so we call = the assignment operator.
+    -> In a new cell try assigning the variable My_Number the value of your age as an intiger. It should look something like the line below:
+
+My_Number = 24
+
+    -> When you are naming a variable it is important not to use spaces. Underscores are perfectly acceptable though. There are several 
+       different naming conventions for variables. I reccomend looking some up, seeing which makes the most sense to you and STAYING CONSISTENT.
+    -> Now that you have a variable lets do something with it. You can see how old you will be in 5 years. On the next line in the same cell  
+       try typing the next line and hit play:
+
+My_Number + 5
+
+    -> Next try checking the Type of this line by using the Type function we used before and make sure the parenthesise wrap around the whole statement. I recomend doing this in the next line so you can see the output and the type
+    -> What happens if you change the 5s to a 5.8s?
+    -> You'll see that an intiger will be treated as a floating point number if the result is a floating point number.
+    -> If you are interested in keeping your results an intiger value there are two easy ways to do this. you can put them inside the patentheses of int() or round() functions. The difference between these functions is subtle but important. int() simply removes the decimal. If it is helpful to think of it as always rounding down to the nearest intiger that is acceptable. round() will by default round to the nearest intiger. Round can be used to round to a certain decimal place too by puting an intiger as a second input, seperated by a comma, in the parenteses. The function will then round to that decimal place.
+    -> We have 5.8 in two places now, and we know we will likely change it multiple times. This is a perfect time to assign it to it's own variable so that if we want to change it in the 
+       future we only have to edit in one spot! Type the following line below the line where you assigned the value of My_Number:
+
+Other_Number = 5.8
+
+    -> Remember that in the previous places where you used this number you will have to replace those with your variable name. This is the 
+       last time you will ever have to edit these locations. It is helpful before you start coding larger projects to know what variables 
+       you may want to use so that you don't realize later and have to go back and do this later.
+    -> We may also want to perform operations on out result too so lets store our result in another variable
+    -> Under the Other_Number line type the following and hit run to make sure your code still works.
+
+New_Number = My_Number + Other_Number
+
+    -> We have seen how intigers and floats behave when added together, but see what happens if you turn Other_Number into a string or a boolean.
+    -> You should have gotten an error. It makes sense that Python would be confused what you are asking it to do here.
+    -> try turning both My_Number and Other_Number to strings and see what happens.
+    -> They are "added" together. It is important to note that the order you put them in matters. When two strings are "added" together it is no longer called addition. This is called concatonation.
+    -> There are many opperators available to you. Here are some common ones and What they do when they are used in arithmatic:
+
++  Addition
+-  Subtraction
+*  Multiplication
+/  Divission
+// Floor Division (rounds down to the nearest intiger)
+** exponentiation
+%  Modulus This is more useful than you think once we get in to loops
+
+    -> There are also comparison opperators. Their output is a boolean True or False. Here are some common ones and when they return true. They work on all datatypes
+
+== iff one value is exactly the same as another value
+!= iff one value is different than another value
+>  iff one value is greater than another value
+< iff one value is less than anther value
+>= iff one value is greater than or equal to another value
+<= iff one Value is equal to another value
+
+     -> there are even operators which perform an action and then reassign the value of the variable if they are used on a variable
+
++= is equivalent to the use of x =  x + 5
+
+    -> There are many more operators and youare welcome to look them up, but these are some of the most common and we will introduce others as needed.
+
+##############################################################################################################
+Introductory input and output:
+
+    -> Up until this point we have been running everything in JupyterLab. Jupyter lab is a great development environment, but it doesn't translate perfectly well to how theings might look in a terminal. One major difference is that when we performed calculations from the previous section we did not use any print statements to get the result. print is how we tell the computewr we would like the user to see some information printed out in the terminal. Try using one of your python scripts in the terminal and see what happens.
+
+    -> The terminal didn't say anyhting did it. It almost feels like nothing happened if it didn't take long for your program to run.
+    -> If you would like to see the output use the print() function and put what you want to print out on to the terminal screen.
+    -> Now try writing a program with 4 variables. In them store a person's name, age, height, and favorite color. Then try to print to the screen a sentence or two that uses that information in those variables in a single print statement.
+    -> You may have run in to some issues and here are some tips
+        -> You want to print a string or set of strings you can concatonate them: like the lines below:
+
+Name = "Ben"
+
+print( Name + " is my name." )
+
+        -> Keep in mind that I added a space to the beggining of the other string. Otherwise when this is printed out there would not be a space between the name and is.
+        -> Keep in mind that intigers cannot be concatonated to strings and if you wanted to perform mathmatical operations on an intiger or float then you can use the str() function in the print statement. Here is another example below.
+
+Name = "Ben"
+Age = 23
+
+print( "My name is " + Name + " and my age is " str(Age) + ". in 5 years I will be " + str(Age + 5 ) + ".")
+
+        -> This is a way to solve many problems. It's worth knowing that print has other ways of solving this.
+        -> print can recieve multiple inputs seperated by commas. Below is an example
+
+Name = Ben
+Age = 23
+
+print( Name , "is my name." , "I am" , Age , "." )
+
+        -> You'll notice I didn't add any spaces. That is because print will automatically seperate the different inputs with spaces. We will call this the delimator. if you would like the delimator to be something else you can change it by using the sep keyword. Here is the same example as before but I will insert the word "dog" between each input.
+
+Name = Ben
+Age = 23
+
+print( Name , "is my name." , "I am" , Age , "." , sep="dog" )
+
+        -> end is also a keyword which adds something at the very end of the print statement. The default is a newline character (\n). I will not be providing an example, but feel free to experiment on your own.
+
+    -> So far we have been hard coding our variables and running them. This is great when you are programming. If some variable is going to be different every time though it can feel tedious to have to open and edit the program every time. Additionally, if you are making something for someone else and you don't want to worry about them having to go in and edit the file it would be nice to recieve input once the program is running.
+    -> this is what the input() function is for.
+    -> When the input function is called the user will be prompted to type an input and press enter.
+    -> When I say prompted, I do not mean the computer tells them to type so it is nice to use a print statement to prompt the user or remind yourself what you would like entered.
+    -> below is a program that will ask the user's name and then greet them
+
+print( "What is your name?" )
+Name = input()
+print ( "Hello, " + Name + ".")
+
+    -> We can actually make this program even shorter.
+    -> The input function can hold it's own prompt. Here is another program that does the same thing.
+
+Name = input( "What is your name?\n" )
+print( "Hello," + Name + ".")
+
+    -> try and see what happens if the user where to put in an intiger or floating point number.
+
+    
