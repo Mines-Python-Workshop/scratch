@@ -1,0 +1,133 @@
+##############################################################################################################################################
+Lists, Tuples, and dictionaries
+
+    -> Lists are a data type which can hold many values. Let's look at an example
+
+Names = ["Ben", "Tom", "Jerry"]
+
+    -> above is a list assigned to a variable called Names. It holds a list of strings.
+    -> try printing that variable
+
+print(Names)
+
+    -> the output is that list. Usually you want a specific value from a list. You can index a list or call for a value at a specific postions
+    -> postions are numbered starting from zero. for example if I wanted to get the value "Ben" from the Names variable I would index it like this.
+
+Names[0]
+
+    -> maybe you want to add your name to the end of the list. one way you could do this is reassigning the variable. Do not do this but I will show it below.
+
+Names = ["Ben", "Tom", "Jerry", "My Name"]
+
+    -> there is a better way. that is with the append method. an example which would provide the same result of above is:
+
+Names.append("My Name")
+
+    -> If you would like it to place an item somewhere other than the end then there is the insert method. Here is an example of a use where it puts an item in the third postion (that is not a typo, remember we start at 0)
+
+Names.insert("Another Name", 2)
+
+    -> There are three ways to get rid of items in a list. the first is remove. remove will remove the first occurance of a value in a list.
+
+list.remove(value)
+
+    -> then there is pop. by default pop will remove the last item of a list. you can also specify an index as an intiger
+
+list.pop(index)
+
+    -> the lst one is del. del will delete an item at a given index
+
+del list[index]
+
+    -> Lists can even hold other lists. These are higher dimentional lists. Here is an example of one with people's names, ages and favorite colors and how you might use it. we call these higher dimensional lists. this list is 2 dimensional.
+
+info = [["Ben", 23, "Blue"],["Tom", 65, "Green"],["Jerry", 1043, "Red"]]
+print(info[1][0] , "is", info[1][1], "years old and likes the color", info[1][2])
+
+    -> another dataset which is similar to a list is a tuple. tuples are almost identical but they are immutable. that means after assignment they can not have values appended, inserted, removed or changed. This may seem like they are worse but when working with large datasets that you know will notchange they are often faster on the binary level. here is an example of a tuple which holds three other tuples of x y and z coordinates. they use () instead of [] during assignment. 
+
+tup = (( 1.34, 2.55, -22.00) , (-33.10 , 0.00, 103.72), (44.21, -88.43,3.14) )
+
+    -> finally there are dictionaries. Dictionaries do not have indexes. they have keys which you assign yourself. a key can be any data type. here is an example of the syntax
+
+
+dict ={Key1 : value1, Key2 : value2, Key3 : value3}
+
+    -> you retrieve the values of a dictionary by using the Key as an index. Here is an example below
+
+Fav_Colors = {"Ben" : "Blue" , "Tom" : "Red" , "Jerry" : "Green" }
+
+print("Ben Loves the color " + Fav_Colors["Ben"])
+
+##############################################################################################################################################
+For loops
+
+    -> By now you likely are concerned about how long it might take to make a long list or change large sets of data. That is what loops are for. let's start with a simple example so we can walk through syntax.
+
+for num in range(6):
+
+    print(n)
+
+    -> The result of this code is an output of numbers 0 to 5. you will notce an interesting function range() this is a simple function that lets you specify a specific range of intigers. I, by default, starts at zero and ends at the intiger you specified without including the intiger specified. The reason it does not include this is so that it can get that many numbers (because we start at zero. if you wanted to start at a different number there is syntax for that.
+
+range(start,stop,step)
+
+    -> the start value is included, the stop value is not and the step value is by how much it will go up (or down) each time.
+
+    -> you will also see in our for loop the num. this is called the itterator. You can put anything here. it is essentially a temporary variable that stores the current value of whater we specify in the loop. in this case it is the number in the range function
+
+    -> there is also a colon. This tells python that the for statement is complete. Any indented lines after the colon are what is going to be performed each cycle of the loop.
+
+    -> lets try using a list of names in a for loop. try this example
+
+people = ["Ben" , "Tom" , "Jerry" ]
+
+for name in people:
+
+    print(name + " is cool.")
+
+    -> This is much easier than writing the 3 different print funcions. Imagine if this list was much longer with 50 names and you wanted to call all of them cool. 
+
+    -> here is an example of a program that utylizes for loops for a massive task.
+
+# prepare an empty list
+mult_13  = []
+
+# add the numbers 1 - 100 to numbers and there multiples of 13 to a list mult_13
+for i in range(1,101):
+
+    mult_13.append(13*i)
+
+#print out the mulptiples of 13
+for i in range(len(mult_13)):
+    print("13 *" , i , "=" , mult_13[i])
+
+    -> try doing this in one for loop.
+
+    -> try iterating through other data types we have learned
+
+####################################################################################################################################################
+conditionals (if statements)
+
+    -> By now you might realize you want to be selective on if something happens based on something else. maybe you want a special greeting if it's you. let's look at an example of some code that will acheive this.
+
+name = input("What is your name? ")
+
+status = "bad"
+
+if name == "Ben":
+    status = "good"
+
+print("I hope you have a " + status + " day " + name )
+
+    -> Though it's not very nice to people named Ben, we have achieved out goal.
+
+    -> The if statement takes a boolean value and so it is typical to put boolean operations after. Do not forget the colon at the end and again any lines indented immediatly after are what happen if the statement is true.
+
+#######################################################################################################################################################
+nesting
+
+    -> nesting is an important part of using for loops and conditionals 
+
+
+

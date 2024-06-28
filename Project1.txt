@@ -1,0 +1,3 @@
+In this project you will practice getting and processing user input as well as returning that output to them.
+
+Create a simple calculator the asks the user for their name and two numbers that they would like the sum, difference, product, dividend and average value of. Output this information politely using the users name and making it clear which value outputted is which.
